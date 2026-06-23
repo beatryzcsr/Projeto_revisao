@@ -1,26 +1,29 @@
 @import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda+SC:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+
 :root {
   --rosa: #EDE7DB;
   --verde: #C7A47E;
   --amarelo: #9E7555;
   --soft_Linen: #B59E8C;
   --deep_Espresso: #644737;
+  
+  /* Fontes */
+  --titulo: 'Bodoni Moda SC', serif;
+  --texto: 'Oswald', sans-serif;
 }
-
 
 body {
   margin: 0;
-  background:  var(--rosa);
+  background: var(--rosa);
+  font-family: var(--texto);
 }
 
-
-/* ── menu ── */
-
+/* ── MENU ── */
 .menu {
   display: flex;
   align-items: center;
-  justify-content: center; 
+  justify-content: center;
   background: var(--amarelo);
   color: #000000;
   padding: 0.9rem 2rem;
@@ -33,33 +36,12 @@ body {
   align-items: center;
 }
 
-
 .nav-link {
   color: rgba(0, 0, 0, 0.75);
   text-decoration: none;
   font-size: 1.13rem;
 }
-.imagem{
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  overflow: hidden; /* evita aparecerem bordas após a rotação */
 
-}
-
-.imagem::before{
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image: url("../public/marmore.png");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  transform: rotate(180deg) ;
-  transform-origin: center;
-
-  z-index: -1;
-}
 .nav-link:hover,
 .nav-link.active {
   color: black;
@@ -71,25 +53,48 @@ body {
   margin-bottom: -20px;
 }
 
+/* ── BACKGROUND DECORATIVO ── */
+.imagem {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
 
-/* ── Container ── */
+.imagem::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("../public/marmore.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  transform: rotate(180deg);
+  opacity: 0.7;
+  z-index: -1;
+}
+
+/* ── CONTAINER E ELEMENTOS DECORATIVOS ── */
 .container {
   max-width: 720px;
   margin: 2rem auto;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
 
 .element1 {
   position: absolute;
   height: 35rem;
- top:-40px;
- margin-left:-35rem;
- transform: rotate(10deg);
- 
+  top: -40px;
+  margin-left: -35rem;
+  transform: rotate(10deg);
 }
 
 .element2 {
-   position: absolute;
-  right: 10rem;  
+  position: absolute;
+  right: 10rem;
   top: 17rem;
   height: 30rem;
 }
@@ -98,23 +103,25 @@ body {
   position: absolute;
   top: 200px;
   left: 85rem;
- height: 35rem;
- transform: rotate(-40deg);
- 
+  height: 35rem;
+  transform: rotate(-40deg);
 }
 
-.home-main{
+/* ── HOME ── */
+.home-main {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 80vh;
+  min-height: 100vh;
   padding-left: clamp(0.5rem, 2vw, 2rem);
-
 }
+
 .home-main p {
   font-family: var(--texto);
   font-size: 20px;
+  font-weight: bold;
   text-align: center;
+  margin: 10px 0;
 }
 
 .home-main .t1,
@@ -123,133 +130,84 @@ body {
   margin: 0;
   line-height: 0.9;
   text-align: center;
+  font-family: var(--titulo);
 }
 
 .home-main .t1 {
-  color: var(--verde);
-  font-family: var(--titulo);
+  -webkit-text-stroke: 2px var(--amarelo);
+  -webkit-text-fill-color: var(--verde);
 }
 
 .home-main .t2 {
-  color: var(--amarelo);
+  -webkit-text-stroke: 2px var(--verde);
+  -webkit-text-fill-color: var(--amarelo);
+}
+
+/* Seção Sobre / Objetivos */
+.info {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  min-height: 100vh;
+}
+
+.aboutUs,
+.obj {
+  flex: 1;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.aboutUs {
+  background-color: var(--deep_Espresso);
+  color: var(--rosa);
+}
+
+.obj {
+  background-color: var(--verde);
+  color: #000;
+}
+
+.info .t3, .info .t4, .info .t5, .info .t6 {
+  font-size: clamp(3rem, 5vw, 5rem);
+  margin: 0;
+  line-height: 0.9;
   font-family: var(--titulo);
 }
 
-/* responsividade  do container tablet*/
-@media (max-width: 1024px) {
+.info .t3 { color: var(--verde); }
+.info .t4 { color: var(--amarelo); }
+.info .t5 { color: var(--amarelo); }
+.info .t6 { color: var(--deep_Espresso); }
 
-  .home-main {
-    padding-left: 2rem;
-    transform: none; 
-    align-items: flex-start;
-  }
-
-  .home-main .t1,
-  .home-main .t2 {
-    font-size: clamp(3rem, 7vw, 6rem);
-  }
-
-  .element1{
-    width: 250px;
-    height: 300px;
-    top:-20px;
- margin-left:-10rem;
- transform: rotate(10deg);
-  }
-
-  .element2{
-    width: 400px;
-    height: 300px;
-  }
-
-  .element3{
-    width: 250px;
-    height: 300px;
- top:200px;
-  margin-left:42rem;
- transform: rotate(-58deg);
-}
-
-/* responsividade  do container celular*/
-
-@media (max-width: 768px) {
-  .element1,
-  .element3 {
-    display: none;
-  }
-
-  .element2{
-    margin-right: -100px;
-  }
-
-  .home-main {
-    height: auto;
-    padding: 2rem;
-    text-align: center;
-    align-items: center;
-  }
-
-  .home-main .t1,
-  .home-main .t2 {
-    font-size: clamp(2.5rem, 12vw, 5rem);
-  }
-}
-}
-
-/* ── Botão home ── */
+/* ── BOTÕES ── */
 .btn {
   padding: 0.5rem 1.1rem;
   border: none;
   cursor: pointer;
+  font-family: var(--texto);
 }
 
 .btn-primary {
-  position: static;
-  font-family: var(--texto);
   background: var(--amarelo);
   border: var(--verde) solid 3px;
   border-radius: 20px;
   font-size: 23px;
-  display: flex;
-  align-self: center;
-  margin: 0 auto;
   text-decoration: none;
-
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
-@media (max-width: 1024px) {
-  .btn-primary {
-    transform: none;
-    align-self: flex-start;
-    font-size: 18px;
-  }
+.btn-primary:hover {
+  opacity: 0.88;
 }
 
-@media (max-width: 768px) {
-  .btn-primary {
-    align-self: center;
-    font-size: 15px;
-  }
-}
+.btn-warning { background: #f59e0b; color: #fff; }
+.btn-danger { background: #dc2626; color: #fff; }
 
-
-
-.btn-warning {
-  background: #f59e0b;
-  color: #fff;
-}
-
-.btn-danger {
-  background: #dc2626;
-  color: #fff;
-}
-
-.btn:hover {
-  opacity: .88;
-}
-
-
-/* ── Mensagens ── */
+/* ── MENSAGENS ── */
 .msg {
   padding: .7rem 1rem;
   border-radius: 5px;
@@ -277,11 +235,9 @@ body {
   color: #dc2626;
 }
 
-
-/* CSS do frmulario e busca */
-
-/* CARD DO FORM */
-.form-card {
+/* ── FORMULÁRIOS E CARDS ── */
+.form-card,
+.auth-card {
   background: var(--amarelo);
   padding: 25px;
   border-radius: 10px;
@@ -289,73 +245,97 @@ body {
   margin-bottom: 30px;
 }
 
-/* FORM */
-.form-card form {
+.form-card h1,
+.auth-card h1 {
+  font-family: var(--texto);
+  color: var(--verde);
+  margin-bottom: 20px;
+}
+
+.form-card form,
+.auth-card form {
   display: flex;
   flex-direction: column;
   gap: 12px;
-
-  h1 {
-    font-family: var(--texto);
-    color: var(--verde);
-    margin-bottom: 20px;
-  }
 }
 
-/* INPUTS E SELECT */
 .form-card input,
-.form-card select {
+.form-card select,
+.auth-card input {
   padding: 12px;
   border: 2px solid #e0e0e0;
   font-size: 1rem;
+  border-radius: 6px;
 }
 
 .form-card input:focus,
-.form-card select:focus {
+.form-card select:focus,
+.auth-card input:focus {
   outline: none;
   border-color: var(--verde);
 }
 
-/* BOTÃO DE CAADASTRO*/
-.form-card button {
+.form-card button,
+.auth-card button {
   font-family: var(--texto);
   width: 120px;
   background: var(--rosa);
   border: var(--verde) solid 3px;
   border-radius: 20px;
   font-size: 20px;
+  cursor: pointer;
+  align-self: center;
 }
 
-.form-card button:hover {
+.form-card button:hover,
+.auth-card button:hover {
   background: var(--verde);
 }
 
-/* LISTA DE PRODUTOS */
+.auth-switch {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.auth-switch button {
+  background: transparent;
+  border: none;
+  color: black;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.auth-note {
+  margin-top: 1rem;
+  font-size: 0.95rem;
+  color: #333;
+}
+
+/* ── LISTA DE PRODUTOS ── */
 .produto {
   background: var(--amarelo);
   padding: 15px 20px;
   border-radius: 8px;
   margin-top: 10px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-
   display: flex;
   justify-content: space-between;
   align-items: center;
   transition: 0.2s;
 }
 
-/* hover  */
 .produto:hover {
   background: #fdf4fb;
   transform: translateY(-2px);
 }
 
-/* NOME + CATEGORIA */
 .produto strong {
   color: var(--verde);
 }
 
-/* BOTÕES */
 .produto button {
   padding: 6px 12px;
   border: none;
@@ -365,13 +345,13 @@ body {
   transition: 0.2s;
 }
 
-/* EDITAR */
+/* Botão Editar */
 .produto button:nth-child(2) {
   background: var(--rosa);
   color: white;
 }
 
-/* EXCLUIR */
+/* Botão Excluir */
 .produto button:nth-child(3) {
   background: #f56565;
   color: white;
@@ -381,7 +361,7 @@ body {
   background: #c53030;
 }
 
-/* INPUT DE BUSCA */
+/* Busca */
 input[placeholder="Buscar..."] {
   width: 100%;
   padding: 12px;
@@ -392,10 +372,76 @@ input[placeholder="Buscar..."] {
 
 input[placeholder="Buscar..."]:focus {
   outline: none;
-  border-color: var (--verde);
+  border-color: var(--verde);
 }
 
-/* RESPONSIVO */
+/* ── RESPONSIVIDADE ── */
+@media (max-width: 1024px) {
+  .home-main {
+    padding-left: 2rem;
+    align-items: flex-start;
+  }
+
+  .home-main .t1,
+  .home-main .t2,
+  .info .t3,
+  .info .t4,
+  .info .t5,
+  .info .t6 {
+    font-size: clamp(3rem, 7vw, 6rem);
+  }
+
+  .element1 {
+    width: 250px;
+    height: 300px;
+    top: -20px;
+    margin-left: -10rem;
+  }
+
+  .element2 { width: 400px; height: 300px; }
+
+  .element3 {
+    width: 250px;
+    height: 300px;
+    top: 200px;
+    margin-left: 42rem;
+    transform: rotate(-58deg);
+  }
+
+  .btn-primary {
+    align-self: flex-start;
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  .element1,
+  .element3 {
+    display: none;
+  }
+
+  .element2 {
+    margin-right: -100px;
+  }
+
+  .home-main {
+    height: auto;
+    padding: 2rem;
+    text-align: center;
+    align-items: center;
+  }
+
+  .home-main .t1,
+  .home-main .t2 {
+    font-size: clamp(2.5rem, 12vw, 5rem);
+  }
+
+  .btn-primary {
+    align-self: center;
+    font-size: 15px;
+  }
+}
+
 @media (max-width: 600px) {
   .produto {
     flex-direction: column;
