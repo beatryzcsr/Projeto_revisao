@@ -7,8 +7,9 @@ export default function Home() {
       <Navbar />
 
       <div className="container">     
+    
+ <div className='imagem'>
 
- 
         <div className="home-main">
           <h1 className="t1">Supplix</h1>
           <h1 className="t2">Nexora</h1>
@@ -23,6 +24,7 @@ export default function Home() {
             </Link>
           </div>
         </div>
+ </div>
 
         <section className="info">
           <div className="aboutUs">
