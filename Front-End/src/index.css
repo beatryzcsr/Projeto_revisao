@@ -5,7 +5,7 @@
   --verde: #C7A47E;
   --amarelo: #9E7555;
   --soft_Linen: #B59E8C;
-  --deep_Espresso: #644737
+  --deep_Espresso: #644737;
 }
 
 
@@ -93,9 +93,7 @@ body {
 .home-main p {
   font-family: var(--texto);
   font-size: 20px;
-  margin-left: -125px;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  text-align: center;
 }
 
 .home-main .t1,
@@ -103,7 +101,7 @@ body {
   font-size: clamp(3rem, 10vw, 10rem);
   margin: 0;
   line-height: 0.9;
-  transform: translateX(-35%);
+  text-align: center;
 }
 
 .home-main .t1 {
@@ -191,7 +189,11 @@ body {
   border: var(--verde) solid 3px;
   border-radius: 20px;
   font-size: 23px;
-  transform: translateX(-70%);
+  display: flex;
+  align-self: center;
+  margin: 0 auto;
+  text-decoration: none;
+
 }
 
 @media (max-width: 1024px) {

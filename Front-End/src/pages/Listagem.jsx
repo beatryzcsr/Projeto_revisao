@@ -135,7 +135,7 @@ export default function ProdutosPage() {
       <Navbar />
       <div className="container">
 
-         <img src="./public/sakura.png" alt="Sakura" className="element1" />
+
 
         {msg === 'sucesso' && <div className="msg msg-sucesso">✅ Cadastrado!</div>}
         {msg.startsWith('erro:') && <div className="msg msg-erro">❌ {msg}</div>}
@@ -158,7 +158,6 @@ export default function ProdutosPage() {
             </button>
           </form>
 
-           <img src="./public/sakura.png" alt="Sakura" className="element3" />
         </div>
 
         {/* ========================
