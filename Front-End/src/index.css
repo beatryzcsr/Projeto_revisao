@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda+SC:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
 :root {
-  --rosa: #f8b6ab;
-  --verde: #839958;
-  --amarelo: #f7f4d5;
-  --titulo: 'Bodoni Moda SC', serif;
-  --texto: "Oswald", sans-serif;
+  --rosa: #EDE7DB;
+  --verde: #C7A47E;
+  --amarelo: #9E7555;
+  --soft_Linen: #B59E8C;
+  --deep_Espresso: #644737
 }
 
 
