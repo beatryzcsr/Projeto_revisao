@@ -6,18 +6,13 @@ export default function Home() {
     <div>
       <Navbar />
 
-      <div className="container">
-        
-        {/* Imagens decorativas */}
-        <img src="/sakura.png" alt="Sakura" className="element1" />
-        <img src="/comida.png" alt="Comida" className="element2" />
-        <img src="/sakura.png" alt="Sakura" className="element3" />
+      <div className="container">     
 
-        {/* Seção Hero Principal */}
+ 
         <div className="home-main">
-          <h1 className="t1">Lotus</h1>
-          <h1 className="t2">Byte</h1>
-          <p>Armazene e Administre seu estoque!</p>
+          <h1 className="t1">Supplix</h1>
+          <h1 className="t2">Nexora</h1>
+          <p className='slogan'>Empresas que fornecem. Pessoas que recebem</p>
           
           <div className="home-actions">
             <Link to="/login">
@@ -29,7 +24,6 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Seção Informativa (Sobre + Equipe) */}
         <section className="info">
           <div className="aboutUs">
             <h1 className="t3">Mega</h1>
