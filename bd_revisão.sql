@@ -4,9 +4,9 @@ email VARCHAR (100)NOT NULL,
 senha VARCHAR (100) NOT NULL
 );
 
-insert into Usuarios (email, senha) values ('JoãoBarbs@gmail.com', 'Barbs_1327');
+insert into Usuarios (email, senha) values ('JoaoBarbs@gmail.com', 'Barbs_1327');
 insert into Usuarios (email, senha) values ('Jessica.Yum@gmail.com', '4722MoreYum');
-insert into Usuarios (email, senha) values ('Pablo_José@gmail.com', 'é_o_zé_Construç');
+insert into Usuarios (email, senha) values ('Pablo_Jose@gmail.com', 'e_o_ze_Construç');
 insert into Usuarios (email, senha) values ('Maria.CAlves@gmail.com', 'Clara19082007');
 insert into Usuarios (email, senha) values ('Henrique_Mendez@gmail.com', 'Mendez_Cores@2738');
 
@@ -39,8 +39,6 @@ insert into Produtos (nome,preco,quantidade_estoque,empresa_id) values ('Estojo 
 ('Controle Dualsense Sem Fio Sony', '404.94', '5', 4),
 ('Massa Pronta Matrix 50Kg', '30.00', '40', 5)
 
-
--- A tabela de tokens é necessária para armazenas os tokens de verificação do usuário, em vez de salvar no local storage
 
 CREATE TABLE tokens (
     id SERIAL PRIMARY KEY,
