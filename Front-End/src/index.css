@@ -77,11 +77,15 @@ body {
 
 /* ── CONTAINER E ELEMENTOS DECORATIVOS ── */
 .container {
-  max-width: 720px;
-  margin: 2rem auto;
   display: flex;
   flex-direction: column;
   width: 100%;
+}
+
+.home-actions {
+  display: flex;
+  align-self: center;
+  gap: 2rem;
 }
 
 .element1 {
