@@ -1,6 +1,7 @@
 
 // Importar dotenv e carregar variáveis do arquivo .env
-require('dotenv').config();
+const path = require('path');
+require('dotenv').config({ path: path.resolve(__dirname, '../../.env') });
 
 // Importar o Pool do PostgreSQL
 const { Pool } = require('pg');
