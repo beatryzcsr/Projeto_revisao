@@ -15,7 +15,7 @@
 
 body {
   margin: 0;
-  background: var(--rosa);
+  background: var(--verde);
   font-family: var(--texto);
 }
 
@@ -190,7 +190,7 @@ body {
   padding: 0.5rem 1.1rem;
   border: none;
   cursor: pointer;
-  font-family: var(--texto);
+  font-family: var(--titulo);
 }
 
 .btn-primary {
@@ -202,6 +202,7 @@ body {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  
 }
 
 .btn-primary:hover {
@@ -210,6 +211,8 @@ body {
 
 .btn-warning { background: #f59e0b; color: #fff; }
 .btn-danger { background: #dc2626; color: #fff; }
+
+
 
 /* ── MENSAGENS ── */
 .msg {
@@ -240,20 +243,48 @@ body {
 }
 
 /* ── FORMULÁRIOS E CARDS ── */
-.form-card,
-.auth-card {
-  background: var(--amarelo);
-  padding: 25px;
+
+.container2{
+  display: flex;
+  justify-content: center;
+  margin-top: 55px;
+  margin-bottom: 45px;
+}
+.form-card{
+  margin: 50px;
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background: var(--deep_Espresso);
   border-radius: 10px;
   box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-  margin-bottom: 30px;
+}
+
+.TituloProduto h2 {
+  margin: 10px;
+  font-family: var(--titulo);
+  color: var(--rosa);
+}
+
+
+.auth-card {
+  padding: 100px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background: var(--deep_Espresso);
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+
 }
 
 .form-card h1,
 .auth-card h1 {
-  font-family: var(--texto);
+  font-family: var(--titulo);
   color: var(--verde);
   margin-bottom: 20px;
+  font-size: 50px;
 }
 
 .form-card form,
@@ -261,6 +292,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 12px;
+  width: 25rem;
 }
 
 .form-card input,
@@ -315,11 +347,13 @@ body {
 .auth-note {
   margin-top: 1rem;
   font-size: 0.95rem;
-  color: #333;
+  color: var(--soft_Linen);
+  font-weight: bold;
 }
 
 /* ── LISTA DE PRODUTOS ── */
 .produto {
+  margin:10px;
   background: var(--amarelo);
   padding: 15px 20px;
   border-radius: 8px;
@@ -367,7 +401,11 @@ body {
 
 /* Busca */
 input[placeholder="Buscar..."] {
-  width: 100%;
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  width: 97%;
+  margin: 10px;
   padding: 12px;
   border: 2px solid #e0e0e0;
   border-radius: 6px;
