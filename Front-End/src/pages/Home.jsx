@@ -5,32 +5,52 @@ export default function Home() {
   return (
     <div>
       <Navbar />
+
       <div className="container">
-      <div className="imagem">
+        
+        {/* Imagens decorativas */}
+        <img src="/sakura.png" alt="Sakura" className="element1" />
+        <img src="/comida.png" alt="Comida" className="element2" />
+        <img src="/sakura.png" alt="Sakura" className="element3" />
+
+        {/* Seção Hero Principal */}
         <div className="home-main">
-          <h1 className="t1">Supplix</h1>
-          <h1 className="t2">Nexora</h1>
-          <p className='slogan'>Empresas que fornecem. Pessoas que recebem</p>
-            <Link to="/produtos"><button className="btn btn-primary">Produtos</button></Link>
+          <h1 className="t1">Lotus</h1>
+          <h1 className="t2">Byte</h1>
+          <p>Armazene e Administre seu estoque!</p>
+          
+          <div className="home-actions">
+            <Link to="/login">
+              <button className="btn btn-primary">Login</button>
+            </Link>
+            <Link to="/produtos">
+              <button className="btn btn-primary">Ver Produtos</button>
+            </Link>
+          </div>
         </div>
 
-      </div>
-      <section className='info'>
+        {/* Seção Informativa (Sobre + Equipe) */}
+        <section className="info">
+          <div className="aboutUs">
+            <h1 className="t3">Mega</h1>
+            <h1 className="t4">mind</h1>
+            <p>
+              Nós somos o Megamind, uma equipe de programadoras focadas no desenvolvimento de sistemas. 
+              Somos formadas por 5 integrantes pertencentes à rede SESI - SENAI de Valinhos. 
+              Nossa missão é entregar sites funcionais e bem desenvolvidos, sempre priorizando a experiência e expectativa dos nossos clientes.
+            </p>
+          </div>
 
-      <div className='aboutUs'>
-        <h1 className='t3'>Mega</h1>
-        <h1 className='t4'>mind</h1>
-        <p>Nós somos o Megamind, uma equipe de programadoras focadas no desenvolvimento de sistemas. Somos formadas por 5 integrantes pertencentes a rede SESI - SENAI da cidade de Valinhos. Temos como missão entregar sites funcionais e bem desenvolvidos, reconhecendo sempre a experiência e expectativa de nossos clientes.</p>
-
-
-      </div>
-
-      <div className='obj'>
-        <h1 className='t5'>Surica</h1>
-        <h1 className='t6'>team</h1>
-        <p>Nós somos o Suricateam, uma equipe de desenvolvedores focada na criação de sites digitais e evolução de sistemas. Nosso grupo é composto por estudantes do curso de Desenvolvimento de Sistemas da rede SESI - SENAI de Valinhos. O nosso grupo é divertido e alegre.</p>
-      </div>
-      </section>
+          <div className="obj">
+            <h1 className="t5">Surica</h1>
+            <h1 className="t6">team</h1>
+            <p>
+              Nós somos o Suricateam, uma equipe de desenvolvedores focada na criação de sites digitais 
+              e evolução de sistemas. Nosso grupo é composto por estudantes do curso de Desenvolvimento 
+              de Sistemas da rede SESI - SENAI de Valinhos. O nosso grupo é divertido e alegre.
+            </p>
+          </div>
+        </section>
       </div>
     </div>
   );
