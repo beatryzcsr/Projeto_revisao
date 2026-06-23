@@ -28,7 +28,7 @@ export default function Login() {
 
   return (
     <div className="login-page">
-      <div className="container">
+      <div className="container2">
         <div className="auth-card">
           <h1>Login</h1>
 

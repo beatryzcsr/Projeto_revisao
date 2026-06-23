@@ -163,13 +163,17 @@ export default function ProdutosPage() {
         {/* ========================
             LISTAGEM (EMBAIXO)
         ======================== */}
-        
+      <div className='TituloProduto'>
        <h2>Produtos</h2>
+      </div>
+      <div className='busca'>
+
         <input
           placeholder="Buscar..."
           value={busca}
           onChange={e => setBusca(e.target.value)}
         />
+      </div>
 
         {loading && <p>Carregando...</p>}
         {erro && <p>{erro}</p>}
