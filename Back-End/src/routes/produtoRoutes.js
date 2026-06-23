@@ -1,9 +1,13 @@
 // Importar o Express para criar o router
 const express = require('express');
 const router = express.Router();
+const authMiddleware = require('../middlewares/authMiddleware');
 
 // Importar as funções do Controller
 const ProdutoController = require('../controllers/produtoController');
+
+// Todas as rotas de produto exigem autenticação JWT
+router.use(authMiddleware);
 
 // ============================================================
 // DEFINIÇÃO DAS ROTAS
