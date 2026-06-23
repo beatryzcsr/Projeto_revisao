@@ -13,7 +13,10 @@ export default function Home() {
           <h1 className="t1">Lotus</h1>
           <h1 className="t2">Byte</h1>
           <p>Armazene e Administre seu estoque!</p>
+          <div className="home-actions">
+            <Link to="/login"><button className="btn btn-primary">Login</button></Link>
             <Link to="/produtos"><button className="btn btn-primary">Produtos</button></Link>
+          </div>
         </div>
 
         <img src="./public/comida.png" alt="comida" className="element2" />

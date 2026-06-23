@@ -6,22 +6,20 @@ const express = require('express');
 const cors = require('cors');
 const app = express();
 const pool = require('./src/config/database');
-const produtosRoutes = require('./src/routes/produtoRoutes');  
+const produtosRoutes = require('./src/routes/produtoRoutes');
+const authRoutes = require('./src/routes/authRoutes');
  
-// Middleware para servir os arquivos estáticos do front-end 
-app.use(express.static('./public')); 
+app.use(express.static('./public'));
+app.use(cors());
+app.use(express.json());
  
-// Middleware CORS para aceitar requisições do frontend
-app.use(cors()); 
+// Rota de autenticação (registro / login)
+app.use('/api/auth', authRoutes);
  
-// Middleware para interpretar JSON no corpo das requisições 
-app.use(express.json()); 
+// Rotas de produtos protegidas por JWT
+app.use('/produtos', produtosRoutes);
  
-// Aplica as rotas de cliente com o prefixo '/clientes' 
-// O caminho '/' no clientesRoutes.js se torna '/clientes' aqui. 
-app.use('/produtos', produtosRoutes);  
- 
-// Inicia o servidor na porta 3000 
-app.listen(3000, () => { 
-    console.log('Servidor rodando em http://localhost:3000'); 
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`Servidor rodando em http://localhost:${PORT}`);
 });

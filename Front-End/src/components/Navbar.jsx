@@ -4,8 +4,9 @@ export default function Navbar() {
   return (
     <nav className="menu">
       <div className="menu-links">
-        <NavLink to="/"         className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}>Início</NavLink>
-        <img src="./public/logo.png" alt="Logo" className = "logo"  />
+        <NavLink to="/home"     className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}>Home</NavLink>
+        <img src="./public/logo.png" alt="Logo" className="logo" />
+        <NavLink to="/"         className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}>Login</NavLink>
         <NavLink to="/produtos" className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}>Produtos</NavLink>
       </div>
     </nav>
