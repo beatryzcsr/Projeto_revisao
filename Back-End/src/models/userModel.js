@@ -2,7 +2,7 @@ const pool = require('../config/database');
 
 async function buscarPorEmail(email) {
   const result = await pool.query(
-    'SELECT * FROM usuarios WHERE email = $1',
+    'SELECT idu AS id, email, senha FROM usuarios WHERE email = $1',
     [email]
   );
   return result.rows[0];
@@ -10,7 +10,7 @@ async function buscarPorEmail(email) {
 
 async function criar({ email, senhaHash }) {
   const result = await pool.query(
-    'INSERT INTO usuarios (email, senha) VALUES ($1, $2) RETURNING id, email',
+    'INSERT INTO usuarios (email, senha) VALUES ($1, $2) RETURNING idu AS id, email',
     [email, senhaHash]
   );
   return result.rows[0];

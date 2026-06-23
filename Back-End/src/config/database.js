@@ -34,4 +34,17 @@ pool.connect((erro, client, release) => {
 
 // EXPORTAR O POOL
 
+// Wrap query to log SQL and parameters for debugging
+const originalQuery = pool.query.bind(pool);
+pool.query = (...args) => {
+  try {
+    const sql = args[0];
+    const params = args[1] || [];
+    console.log('SQL:', typeof sql === 'string' ? sql.replace(/\s+/g,' ') : sql, 'PARAMS:', params);
+  } catch (e) {
+    console.error('Erro ao logar query', e);
+  }
+  return originalQuery(...args);
+};
+
 module.exports = pool;
