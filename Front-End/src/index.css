@@ -58,19 +58,6 @@ body {
   margin: 2rem auto;
 }
 
-.login-page {
-  display: flex;
-  min-height: 100vh;
-  align-items: center;
-  justify-content: center;
-  padding: 2rem 0;
-}
-
-.login-page .container {
-  max-width: 420px;
-  margin: 0;
-}
-
 .element1 {
   position: absolute;
   height: 35rem;
@@ -204,18 +191,12 @@ body {
   border: var(--verde) solid 3px;
   border-radius: 20px;
   font-size: 23px;
-  margin-top: 1rem;
-}
-
-.home-actions {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-  margin-top: 1rem;
+  transform: translateX(-70%);
 }
 
 @media (max-width: 1024px) {
   .btn-primary {
+    transform: none;
     align-self: flex-start;
     font-size: 18px;
   }
@@ -313,8 +294,7 @@ body {
 }
 
 /* BOTÃO DE CAADASTRO*/
-.form-card button,
-.auth-card button {
+.form-card button {
   font-family: var(--texto);
   width: 120px;
   background: var(--rosa);
@@ -323,63 +303,8 @@ body {
   font-size: 20px;
 }
 
-.form-card button:hover,
-.auth-card button:hover {
+.form-card button:hover {
   background: var(--verde);
-}
-
-.auth-card {
-  background: var(--amarelo);
-  padding: 25px;
-  border-radius: 10px;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-  margin-bottom: 30px;
-}
-
-.auth-card h1 {
-  font-family: var(--texto);
-  color: var(--verde);
-  margin-bottom: 20px;
-}
-
-.auth-card form {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.auth-card input {
-  padding: 12px;
-  border: 2px solid #e0e0e0;
-  font-size: 1rem;
-}
-
-.auth-card input:focus {
-  outline: none;
-  border-color: var(--verde);
-}
-
-.auth-switch {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  margin-top: 1rem;
-}
-
-.auth-switch button {
-  cursor: pointer;
-  width: auto;
-  background: transparent;
-  border: none;
-  color: black;
-  font-weight: 600;
-}
-
-.auth-note {
-  margin-top: 1rem;
-  font-size: 0.95rem;
-  color: #333;
 }
 
 /* LISTA DE PRODUTOS */
